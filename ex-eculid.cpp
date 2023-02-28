@@ -38,15 +38,15 @@ int main()
          y[0] = m;
          y[1] = a;
         int i=1;
-        while (y[i]!=1)
+        while (y[i]!=0)
         {
             i++;
             int q = y[i-2] / y[i-1];
-            y[i] = y[i-2] - y[i-1]*q;
+            y[i] = y[i-2] % y[i-1];
             x[i] = x[i-2] - x[i-1]*q;
         }
-        while(x[i]<0) x[i]+=m;
-        cout<<x[i];
+        while(x[i-1]<0) x[i-1]+=m;
+        cout<<x[i-1];
     }
     return 0;
 }
